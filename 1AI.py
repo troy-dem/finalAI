@@ -36,7 +36,7 @@ class Server:
         
         
         #statégie
-        def compute_score(line, tower): #calcul du score pour un mouvement le plus favorable
+        def compute_score(line, tower): #calcul du score pour une position recue en argument
             line= line
             tower= tower
             score=0
@@ -61,7 +61,7 @@ class Server:
                                 score= (score*(-1))
             return(score)
 
-        def spotscore(board): #créé une lise de scores
+        def spotscore(board): #créé une lise des scores de chaque position
             spotList=[]
             i=0
             for line in board:
@@ -91,7 +91,7 @@ class Server:
                 i+=1
             return(out)
         
-        def choose_move(a): #créé un move 
+        def choose_move(a): #choisit un move intéressant stratégiquement
             line, tower= a
             coup={}
             if len(board[line][tower]) != 0:
