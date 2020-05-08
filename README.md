@@ -1,5 +1,5 @@
 # finalAI
-IA qui joue à avalam pour le projet informatique de (Adrian Szidlowski et Louis Demarcin)
+IA qui joue à avalam pour le projet informatique de (Adrian Szydlowski et Louis Demarcin)
 
 pour inscrire l'IA il y a le programme subtest.py pour lequel on peut spécifier le port en sys.argv[1] 
 pour lancer l'IA on peut taper le numéro de port en sys.argv[1] (attention à lancer sur le même port que subtest)
