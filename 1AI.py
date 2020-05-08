@@ -36,7 +36,7 @@ class Server:
         
         
         #statégie
-        def compute_score(line, tower):
+        def compute_score(line, tower): #calcul du score pour un mouvement le plus favorable
             line= line
             tower= tower
             score=0
@@ -61,8 +61,7 @@ class Server:
                                 score= (score*(-1))
             return(score)
 
-        def spotscore(board):
-            board = board
+        def spotscore(board): #créé une lise de scores
             spotList=[]
             i=0
             for line in board:
@@ -74,17 +73,11 @@ class Server:
                     else:
                         spotLine.append(100)
                     j+=1
-                """ with open("spotline.txt", "a") as f:
-                                data= "{}\n".format(spotLine)
-                                f.write(data)  """
                 spotList.append(spotLine)
                 i+=1
-            with open("spotlist.txt", "a") as f:
-                                data= "{}\n".format(spotList)
-                                f.write(data) 
             return (spotList)
         
-        def choose_spot(L):
+        def choose_spot(L): #recoi une liste en parametre et envoi des coordonnées auxquelles un mouvement peux etre jouer
             spt_list= L
             choice = spt_list[0][0]
             i=0
@@ -98,7 +91,7 @@ class Server:
                 i+=1
             return(out)
         
-        def choose_move(a):
+        def choose_move(a): #créé un move 
             line, tower= a
             coup={}
             if len(board[line][tower]) != 0:
@@ -130,7 +123,7 @@ class Server:
                 
             return(coup)
         
-        def check_move(move):
+        def check_move(move): #vérifie si le move est faisable
             coup = move
             try:
                 originLine = coup["move"]["from"][0]
@@ -143,7 +136,7 @@ class Server:
             except:
                 return(False)
 
-        def random_move():
+        def random_move(): #créé un move aléatoire mais favorable car place le pion du joueur par dessus
             bad=True
             while bad:
                 #génératuer de coup aléatoire
@@ -164,7 +157,7 @@ class Server:
                                 return(coup)
                 except:
                     bad=True
-        def safe_move():
+        def safe_move(): #créé un move aléatoire
             bad=True
             while bad:
                 #génératuer de coup aléatoire
