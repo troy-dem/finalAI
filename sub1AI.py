@@ -16,5 +16,5 @@ def sendJSON(socket, data):
 	while total < len(msg):
 		sent = socket.send(msg[total:])
 		total += sent
-info = {"matricules":["18190","18303"],"port": po,"name": "Personnage_Non_Joueur"}
+info = {"matricules":["18090","18303"],"port": po,"name": "Personnage_Non_Joueur"}
 sendJSON(s,info)
